@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:infra="clr-namespace:SoulsTatoo.Infrastructure"
+             x:Class="SoulsTatoo.App">
+	<Application.Resources>
+
+		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <!-- Colors -->
+            <Color x:Key="primary">#F44336</Color>
+            <Color x:Key="primary_dark">#801515</Color>
+            <Color x:Key="primary_light">#FFCDD2</Color>
+            <Color x:Key="accent">#795548</Color>
+            <Color x:Key="primary_text">#212121</Color>
+            <Color x:Key="secondary_text">#757575</Color>
+            <Color x:Key="icons">#FFFFFF</Color>
+            <Color x:Key="divider">#BDBDBD</Color>
+
+            <!-- Locator -->
+            <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
+
+        </ResourceDictionary>
+
+	</Application.Resources>
+</Application>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SoulsTatoo.Views.LoginPage"
+             xmlns:i18n="clr-namespace:SoulsTatoo.Helpers"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <Grid BindingContext="{Binding Login}">
+            <Image 
+                Aspect="AspectFill"
+                Source="wallpaper.jpg"/>
+
+            <BoxView 
+                Color="{StaticResource primary_dark}"
+                Opacity="0.7"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Image
+                    Grid.Row="0"
+                    Source="ic_launcher.png"
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Margin="0,50,0,20"/>
+                <ActivityIndicator
+                        IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                        VerticalOptions="Center"/>
+
+                <StackLayout Grid.Row="1"
+                             Padding="30,1">
+                    <!--EmailPlaceholder-->
+                    <Entry Placeholder="{i18n:Translate EmailPlaceholder}"
+                        PlaceholderColor="{StaticResource icons}"
+                        TextColor="{StaticResource icons}"/>
+                    <!--PasswordPlaceholder-->
+                    <Entry 
+                        IsPassword="True"
+                        Placeholder="{i18n:Translate PasswordPlaceholder}"
+                        PlaceholderColor="{StaticResource icons}"
+                        TextColor="{StaticResource icons}"/>
+
+                    <StackLayout
+                        Margin="10"
+                        Orientation="Horizontal"
+                        VerticalOptions="Center">
+                        <!--Rememberme-->
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+                            Text="{i18n:Translate Rememberme}"
+                            TextColor="{StaticResource icons}"
+                            VerticalOptions="Center"/>
+
+                        <Switch
+                            IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                            HorizontalOptions="End"/>
+
+                    </StackLayout>
+                    <!--Login-->
+                    <Button Text="{i18n:Translate Login}"
+                            BackgroundColor="{StaticResource icons}"
+                            BorderRadius="20"
+                            Command="{Binding LoginCommand}"
+                            TextColor="{StaticResource primary_dark}"/>
+
+                    <StackLayout Orientation="Horizontal">
+                        <!--ForgotPass-->
+                        <Label Text="{i18n:Translate ForgotPass}"
+                               TextColor="{StaticResource icons}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <!--Register-->
+                        <Label FontAttributes="Bold"
+                               HorizontalOptions="EndAndExpand"
+                               Text="{i18n:Translate Register}"
+                               TextColor="{StaticResource icons}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                               
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2"
+                             HorizontalOptions="Center"
+                             Margin="0,0,0,2">
+                    <!--LoginWith-->
+                    <Label Text="{i18n:Translate LoginWith}"
+                           TextColor="{StaticResource icons}"
+                           HorizontalOptions="Center"
+                           FontSize="20"
+                           FontAttributes="Bold"/>
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <Image
+                            Source="facebook_logo.png"
+                            WidthRequest="65"
+                            HeightRequest="65"/>
+                        <Image
+                            Source="instagram_logo.png"
+                            WidthRequest="60"
+                            HeightRequest="60"/>
+                        <Image
+                            Source="twitter_logo.png"
+                            WidthRequest="65"
+                            HeightRequest="65"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

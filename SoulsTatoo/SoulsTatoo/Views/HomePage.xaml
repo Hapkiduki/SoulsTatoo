@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="SoulsTatoo.Views.HomePage"
+             Title="Home"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame OutlineColor="{StaticResource primary_dark}"
+                   BackgroundColor="Black"
+                   CornerRadius="5"
+                   HasShadow="True"
+                   Padding="1" 
+                   Margin="10"
+                   HorizontalOptions="Center">
+                <Grid>
+                    <cv:CarouselViewControl 
+                        Orientation="Horizontal"
+                        Position="0"
+                        ItemsSource="{Binding Carousel}"
+                        HeightRequest="200"
+                        IndicatorsTintColor="Red"
+                        AnimateTransition="True"
+                        ArrowsBackgroundColor="Red"
+                        ArrowsTintColor="Black"
+                        IndicatorsShape="Circle"
+                        ShowArrows="True"
+                        ShowIndicators="True">
+                        <cv:CarouselViewControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Image
+                                        HeightRequest="200"
+                                        Source="{Binding Image}"
+                                        Aspect="AspectFill"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </cv:CarouselViewControl.ItemTemplate>
+                    </cv:CarouselViewControl>
+
+                    <StackLayout VerticalOptions="End"
+                                                Orientation="Vertical"
+                                                 HeightRequest="50">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <BoxView 
+                                Grid.ColumnSpan="3"
+                                BackgroundColor="{StaticResource primary_dark}"
+                                Opacity="0.3"/>
+                            <controls:CircleImage 
+                                Grid.Column="0"
+                                VerticalOptions="End"
+                                Aspect="AspectFit"
+                                HeightRequest="50"
+                                HorizontalOptions="Start"
+                                Margin="20,0,0,1"
+                                Source="ic_launcher"
+                                WidthRequest="50">
+                            </controls:CircleImage>
+                            <Label Grid.Column="1"
+                                Text="Andrés Felipe Corrales Ortiz"
+                               TextColor="White"
+                               VerticalOptions="Center"/>
+                            <Image
+                                Grid.Column="2"
+                                Source="ic_star"/>
+                        </Grid>
+
+                    </StackLayout>
+                </Grid>
+
+
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
