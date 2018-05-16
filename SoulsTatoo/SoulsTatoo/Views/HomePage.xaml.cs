@@ -15,6 +15,6 @@ namespace SoulsTatoo.Views
 		public HomePage ()
 		{
 			InitializeComponent ();
-		}
+        }
 	}
 }

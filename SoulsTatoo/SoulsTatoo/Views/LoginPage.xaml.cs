@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 
 namespace SoulsTatoo.Views
 {
+    
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
@@ -18,6 +19,8 @@ namespace SoulsTatoo.Views
 		{
 			InitializeComponent ();
 		}
+
         
-	}
+
+    }
 }

@@ -8,15 +8,8 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <StackLayout>
-            <Frame OutlineColor="{StaticResource primary_dark}"
-                   BackgroundColor="Black"
-                   CornerRadius="5"
-                   HasShadow="True"
-                   Padding="1" 
-                   Margin="10"
-                   HorizontalOptions="Center">
-                <Grid>
-                    <cv:CarouselViewControl 
+            <Grid>
+                <cv:CarouselViewControl 
                         Orientation="Horizontal"
                         Position="0"
                         ItemsSource="{Binding Carousel}"
@@ -28,33 +21,34 @@
                         IndicatorsShape="Circle"
                         ShowArrows="True"
                         ShowIndicators="True">
-                        <cv:CarouselViewControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Image
+                    <cv:CarouselViewControl.ItemTemplate>
+                        <DataTemplate>
+
+                            <Image
                                         HeightRequest="200"
                                         Source="{Binding Image}"
                                         Aspect="AspectFill"/>
 
-                                </Grid>
-                            </DataTemplate>
-                        </cv:CarouselViewControl.ItemTemplate>
-                    </cv:CarouselViewControl>
 
-                    <StackLayout VerticalOptions="End"
+                        </DataTemplate>
+                    </cv:CarouselViewControl.ItemTemplate>
+                </cv:CarouselViewControl>
+
+                <StackLayout VerticalOptions="End"
                                                 Orientation="Vertical"
                                                  HeightRequest="50">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="auto"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <BoxView 
+                    <Grid
+                        IsClippedToBounds="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <BoxView 
                                 Grid.ColumnSpan="3"
                                 BackgroundColor="{StaticResource primary_dark}"
                                 Opacity="0.3"/>
-                            <controls:CircleImage 
+                        <controls:CircleImage 
                                 Grid.Column="0"
                                 VerticalOptions="End"
                                 Aspect="AspectFit"
@@ -63,21 +57,18 @@
                                 Margin="20,0,0,1"
                                 Source="ic_launcher"
                                 WidthRequest="50">
-                            </controls:CircleImage>
-                            <Label Grid.Column="1"
+                        </controls:CircleImage>
+                        <Label Grid.Column="1"
                                 Text="Andrés Felipe Corrales Ortiz"
                                TextColor="White"
                                VerticalOptions="Center"/>
-                            <Image
+                        <Image
                                 Grid.Column="2"
                                 Source="ic_star"/>
-                        </Grid>
+                    </Grid>
 
-                    </StackLayout>
-                </Grid>
-
-
-            </Frame>
+                </StackLayout>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,9 +4,9 @@
     using Xamarin.Forms;
 
     public partial class App : Application
-	{
+    {
         #region Properties
-        public static NavigationPage Navigator { get; internal set; } 
+        public static NavigationPage Navigator { get; internal set; }
         #endregion
         #region Constructors
 
@@ -15,6 +15,7 @@
             InitializeComponent();
 
             MainPage = new LoginPage();
+            //MainPage = new HomePage();
 
         }
         #endregion
@@ -33,7 +34,7 @@
         protected override void OnResume()
         {
             // Handle when your app resumes
-        } 
+        }
         #endregion
     }
 }
