@@ -6,6 +6,7 @@
              x:Class="SoulsTatoo.Views.HomePage"
              Title="Home"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -59,6 +60,7 @@
                                 WidthRequest="50">
                         </controls:CircleImage>
                         <Label Grid.Column="1"
+                               FontFamily="{StaticResource Neucha}"
                                 Text="Andrés Felipe Corrales Ortiz"
                                TextColor="White"
                                VerticalOptions="Center"/>

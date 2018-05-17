@@ -29,17 +29,20 @@
                     Margin="0,50,0,20"/>
                 <ActivityIndicator
                         IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                        IsVisible="{Binding IsRunning, Mode=TwoWay}"
                         VerticalOptions="Center"/>
 
                 <StackLayout Grid.Row="1"
                              Padding="30,1">
                     <!--EmailPlaceholder-->
                     <Entry Placeholder="{i18n:Translate EmailPlaceholder}"
-                        PlaceholderColor="{StaticResource icons}"
-                        TextColor="{StaticResource icons}"/>
+                           PlaceholderColor="{StaticResource icons}"
+                           FontFamily="{StaticResource Neucha}"
+                           TextColor="{StaticResource icons}"/>
                     <!--PasswordPlaceholder-->
                     <Entry 
                         IsPassword="True"
+                        FontFamily="{StaticResource Neucha}"
                         Placeholder="{i18n:Translate PasswordPlaceholder}"
                         PlaceholderColor="{StaticResource icons}"
                         TextColor="{StaticResource icons}"/>
@@ -51,6 +54,7 @@
                         <!--Rememberme-->
                         <Label
                             HorizontalOptions="StartAndExpand"
+                            FontFamily="{StaticResource Neucha}"
                             Text="{i18n:Translate Rememberme}"
                             TextColor="{StaticResource icons}"
                             VerticalOptions="Center"/>
@@ -65,11 +69,17 @@
                             BackgroundColor="{StaticResource icons}"
                             BorderRadius="20"
                             Command="{Binding LoginCommand}"
+                            FontFamily="{StaticResource GloriaHallelujah}"
                             TextColor="{StaticResource primary_dark}"/>
+
+
+                    <!--FontFamily=Device.RuntimePlatform == Device.Android ?
+                    "Pacifico-Regular.ttf#Pacifico-Regular" : null-->
 
                     <StackLayout Orientation="Horizontal">
                         <!--ForgotPass-->
                         <Label Text="{i18n:Translate ForgotPass}"
+                               FontFamily="{StaticResource Neucha}"
                                TextColor="{StaticResource icons}">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
@@ -77,6 +87,7 @@
                         </Label>
                         <!--Register-->
                         <Label FontAttributes="Bold"
+                               FontFamily="{StaticResource Neucha}"
                                HorizontalOptions="EndAndExpand"
                                Text="{i18n:Translate Register}"
                                TextColor="{StaticResource icons}">
@@ -95,6 +106,7 @@
                     <Label Text="{i18n:Translate LoginWith}"
                            TextColor="{StaticResource icons}"
                            HorizontalOptions="Center"
+                           FontFamily="{StaticResource GloriaHallelujah}"
                            FontSize="20"
                            FontAttributes="Bold"/>
                     <StackLayout Orientation="Horizontal"

@@ -19,6 +19,17 @@
 
             <!-- Locator -->
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
+            
+            <!-- Fonts -->
+            <OnPlatform x:Key="GloriaHallelujah"
+                        x:TypeArguments="x:String"
+                        iOS="GloriaHallelujah"
+                        Android="GloriaHallelujah.ttf#GloriaHallelujah"/>
+
+            <OnPlatform x:Key="Neucha"
+                        x:TypeArguments="x:String"
+                        iOS="Neucha"
+                        Android="Neucha.ttf#Neucha"/>
 
         </ResourceDictionary>
 

@@ -50,6 +50,11 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>SoulsTatoo</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GloriaHallelujah.ttf</string>
+		<string>Neucha.ttf</string>
+	</array>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>es</string>

@@ -1,5 +1,6 @@
 ﻿namespace SoulsTatoo.iOS
 {
+    using System;
     using CarouselView.FormsPlugin.iOS;
     using FFImageLoading.Forms.Touch;
     using Foundation;
@@ -22,11 +23,20 @@
         {
             global::Xamarin.Forms.Forms.Init();
             CachedImageRenderer.Init();
-            
             CarouselViewRenderer.Init();
+
+            this.LoadFont();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void LoadFont()
+        {
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes() {
+                Font = UIFont.FromName("GloriaHallelujah", 20)
+            });
         }
     }
 }

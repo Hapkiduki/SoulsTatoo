@@ -1,11 +1,17 @@
 ﻿namespace SoulsTatoo.Droid
 {
-
+    using System;
     using Android.App;
     using Android.Content.PM;
+    using Android.Graphics;
     using Android.OS;
+    using Android.Text;
+    using Android.Text.Style;
+    using Android.Widget;
     using CarouselView.FormsPlugin.Android;
     using FFImageLoading.Forms.Droid;
+    using Xamarin.Forms;
+    using static System.Net.Mime.MediaTypeNames;
 
     [Activity(Label = "SoulsTatoo",
         Icon = "@drawable/ic_launcher",
@@ -30,6 +36,7 @@
             global::Xamarin.Forms.Forms.Init(this, bundle);
             CachedImageRenderer.Init();
             CarouselViewRenderer.Init();
+        
             LoadApplication(new App());
         }
     }
